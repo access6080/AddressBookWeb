@@ -1,0 +1,38 @@
+### Create Buddy Info
+POST http://localhost:8080/api/v1/buddyInfo
+Content-Type: application/json
+
+{
+  "id": 1,
+  "name": "Chris",
+  "address": "34 Straw Rd",
+  "phoneNumber": "123-906-789"
+}
+
+#### Get All Buddy Infos
+#GET http://localhost:8080/api/v1/buddyInfo
+
+
+### Delete Buddy Info With id 1
+DELETE http://localhost:8080/api/v1/buddyInfo/1
+
+
+
+### Get All Address books
+GET http://localhost:8080/api/v1/addressBook
+
+### Create New Address book
+POST http://localhost:8080/api/v1/addressBook
+Content-Type: application/json
+
+{
+  "id": 2,
+  "buddies": [
+    {
+      "name": "Carl",
+      "address": "2300 Capstone Rd",
+      "phoneNumber": "145-456-789",
+      "id": 4
+    }
+  ]
+}
