@@ -3,7 +3,6 @@ package com.web.addressbookweb;
 import com.web.addressbookweb.addressBook.AddressBook;
 import com.web.addressbookweb.addressBook.AddressBookRepository;
 import com.web.addressbookweb.buddyInfo.BuddyInfo;
-import com.web.addressbookweb.buddyInfo.BuddyInfoRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -64,16 +63,22 @@ public class AddressBookWebApplication {
     public CommandLineRunner adbRunner(AddressBookRepository repository){
         return (args) -> {
             AddressBook addressBook =  new AddressBook(1L);
+            AddressBook addressBook1 = new AddressBook(2L);
 
             BuddyInfo homerB = new BuddyInfo("Homer",
                     "1900 Capstone Rd", "123-456-789", 1L);
             BuddyInfo george = new BuddyInfo("George",
                     "1125 Aylmer Ave", "234-789-101",  2L);
 
+            BuddyInfo chris = new BuddyInfo("Chris",  "123 Cob St",
+                    "234-009-112", 3L);
             addressBook.addBuddy(homerB);
             addressBook.addBuddy(george);
 
+            addressBook1.addBuddy(chris);
+
             repository.save(addressBook);
+            repository.save(addressBook1);
 
             // fetch all addressBooks
             log.info("AddressBook found with findAll():");
