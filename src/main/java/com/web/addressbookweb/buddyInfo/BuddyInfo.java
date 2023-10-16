@@ -11,6 +11,8 @@ public class BuddyInfo implements Serializable {
     private String address;
     private String phoneNumber;
 
+    private  String nickName;
+
     @ManyToOne
     private AddressBook addressBook;
 
@@ -23,6 +25,7 @@ public class BuddyInfo implements Serializable {
         this.address = address;
         this.phoneNumber = phoneNumber;
         this.id = id;
+        this.nickName = "" + name.charAt(0) + name.charAt(name.length() - 1);
     }
 
     public BuddyInfo() {}
@@ -57,6 +60,14 @@ public class BuddyInfo implements Serializable {
 
     public Long getId() {
         return id;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public void setNickName(String nickName) {
+        this.nickName = nickName;
     }
 
     @Override

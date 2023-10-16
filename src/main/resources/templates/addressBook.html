@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Address Book</title>
@@ -8,14 +8,12 @@
     <h1 th:text="'Showing Address Book ' + ${id}"/>
 
     <h2> Buddies: </h2>
-<!--    <ul>-->
-<!--        <li th:each="buddy : ${buddies}" th:text="${buddy}"></li>-->
-<!--    </ul>-->
     <table>
         <thead>
         <tr>
             <th>Id</th>
             <th>Name</th>
+            <th>NickName</th>
             <th>Phone Number</th>
             <th>Address</th>
         </tr>
@@ -24,6 +22,7 @@
         <tr th:each="buddy : ${buddies}">
             <td th:text="${buddy.getId()}"></td>
             <td th:text="${buddy.getName()}"></td>
+            <td th:text="${buddy.getNickName()}"></td>
             <td th:text="${buddy.getPhoneNumber()}"></td>
             <td th:text="${buddy.getAddress()}"></td>
         </tr>
